@@ -114,6 +114,7 @@ class VenueForm(Form):
             ('Rock n Roll', 'Rock n Roll'),
             ('Soul', 'Soul'),
             ('Other', 'Other'),
+            ('Swing', 'Swing'),
         ]
     )
     seeking_artist = SelectField(
@@ -127,7 +128,7 @@ class VenueForm(Form):
         'facebook_link', validators=[URL()]
     )
     seeking_description = StringField(
-        'seeking_description', validators=[DataRequired()]
+        'seeking_description'
     )
 class ArtistForm(Form):
     name = StringField(
@@ -203,7 +204,7 @@ class ArtistForm(Form):
         'website_link'
     )
     seeking_description = StringField(
-        'seeking_description', validators=[DataRequired()]
+        'seeking_description'
     )
     genres = SelectMultipleField(
         # TODO implement enum restriction
